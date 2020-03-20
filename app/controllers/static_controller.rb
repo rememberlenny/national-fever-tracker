@@ -5,6 +5,9 @@ class StaticController < ApplicationController
   def about
   end
 
+  def faq
+  end
+
   def pricing
     redirect_to root_path, alert: "There are no pricing plans configured." unless Plan.exists?
   end

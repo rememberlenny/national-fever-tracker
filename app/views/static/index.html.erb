@@ -1,18 +1,66 @@
 <div class="py-32 max-w-2xl m-auto text-center flex flex-col items-center justify-center">
-  <h1 class="mb-2">Welcome to Jumpstart</h1>
-  <p class="mb-6 text-gray-700 leading-normal text-xl">Jumpstart is the perfect starting point for your next Ruby on Rails app. Skip the boilerplate setup and build your app faster.</p>
+  <h1 class="mb-2">Report your symptoms once a day and help track COVID-19</h1>
+  <p class="mb-6 text-gray-700 leading-normal text-xl">Even if you are not sick or even if you do not think that you are at risk for Covid-19. <span class="font-bold">We need your help!</span></p>
+  <div class="flex flex-col items-center md:flex-row mb-8">
+    <div class="w-full md:w-auto">
+      <%= link_to "Start reporting your temperature", jumpstart_path, data: { turbolinks: false }, class: "text-xl btn btn-primary mr-0 lg:mb-0 mb-4" %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center md:flex-row">
+    <div>
+      <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
+      <%= link_to "Learn more", '#mission', class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+      <%= link_to "Request the data", jumpstart.docs_path, target: :_blank, data: { turbolinks: false }, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+    </div>
+  </div>
 
-  <% if Rails.env.development? %>
-    <div class="flex flex-col items-center md:flex-row">
-      <div class="w-full md:w-auto">
-        <%= link_to "Configure Jumpstart", jumpstart_path, data: { turbolinks: false }, class: "btn btn-primary lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-      </div>
+</div>
 
-      <div>
-        <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
-        <%= link_to "Create a User", new_user_registration_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-        <%= link_to "Read the Docs", jumpstart.docs_path, target: :_blank, data: { turbolinks: false }, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+<div class="py-12 bg-white">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="mission" class="lg:text-left">
+      <p class="max-w-2xl mx-auto text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Mission</p>
+      <h3 class="max-w-2xl mx-auto mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        The tool we are missing in the fight against Covid-19 is a way to collect data. 
+      </h3>
+    </div>
+
+    <div class="mt-10">
+      <div class="flex mx-auto max-w-xl text-lg text-gray-900">
+        <div class="">
+          <p class="mt-4">
+            If you are willing to report your symptoms once a day for the duration of the Covid-19 epidemic, you can help people detect cases, understand the spread, and appropriately respond to this threat. This is vitally important. With better data we can save lives and we can save our economy. Everyone wants to get back to life, back to restaurants, back to seeing friends. Everyone also wants to stop millions of avoidable deaths. The way to win is through data.
+          </p>
+          <p class="mt-4">
+            Simply put, our mission is to collect self-reported symptoms from everyone in the country.
+          </p>
+          <p class="mt-4">
+            This tool was developed in March 2020 in response to a massive crisis that is resulting in deaths and job losses and loneliness. We are asking for help from every person. It’s your world. It’s your data. This data we collect goes directly to the research community and is available to all for free.
+          </p>
+          <p class="mt-4">
+            This data is not a substitute for widespread direct testing for the Covid-19 virus, but it's something to fill the gap. If enough people participate, this will be extremely valuable. Let’s get the world opened up again. Let’s take Covid-19 out!
+          </p>
+          <p class="mt-4">
+            Our application will ask you every day to report if you have a fever or not. We will ask for a few more signature symptoms of Covid-19, such as trouble breathing. The update only takes a few seconds to do.
+          </p>
+          <p class="mt-4">
+            All health information is private. We do not collect any personal identifiers so your responses can not be linked to you directly to you. The symptoms you report will be aggregated and reported by geographic region. Even we will not know who you are [see link to Privacy].
+          </p>
+          <p class="mt-4 italic text-gray-700">
+            P.S. This is not a business and has no intention of trying to make money. The volunteers working on this are academics and researchers.  <%= link_to 'Learn about the people behind this', about_path %> , or <%= link_to 'contact us to contribute', 'mailto:joy@nationalfevertracker.com' %>.
+          </p>
+        </div>
       </div>
     </div>
-  <% end %>
+
+    <div class="py-32 max-w-2xl m-auto text-center flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center md:flex-row">
+        <div>
+          <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
+          <%= link_to "Frequently asked questions", faq_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+          <%= link_to "About", about_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

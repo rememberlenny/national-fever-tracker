@@ -1,0 +1,14 @@
+--- !ruby/object:Jumpstart::Configuration
+application_name: National Fever Tracker
+business_name: Public Art, LLC
+domain: nationalfevertracker.com
+support_email: leonard@nationalfevertracker.com
+default_from_email: National Fever Tracker <noreply@nationalfevertracker.com>
+business_address: |-
+  110 E 13th St
+  #3D
+  New York, NY
+background_job_processor: async
+email_provider: postmark
+integrations:
+- honeybadger
