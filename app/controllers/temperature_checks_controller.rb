@@ -1,49 +1,49 @@
 class TemperatureChecksController < ApplicationController
-  before_action :set_temperature_check, only: [:show, :edit, :update, :destroy]
+  # before_action :set_temperature_check, only: [:show, :edit, :update, :destroy]
 
-  # GET /temperature_checks
-  def index
-    @pagy, @temperature_checks = pagy(TemperatureCheck.all)
-  end
+  # # GET /temperature_checks
+  # def index
+  #   @pagy, @temperature_checks = pagy(TemperatureCheck.all)
+  # end
 
-  # GET /temperature_checks/1
-  def show
-  end
+  # # GET /temperature_checks/1
+  # def show
+  # end
 
   # GET /temperature_checks/new
   def new
     @temperature_check = TemperatureCheck.new
   end
 
-  # GET /temperature_checks/1/edit
-  def edit
-  end
+  # # GET /temperature_checks/1/edit
+  # def edit
+  # end
 
   # POST /temperature_checks
   def create
     @temperature_check = TemperatureCheck.new(temperature_check_params)
 
     if @temperature_check.save
-      redirect_to @temperature_check, notice: 'Temperature check was successfully created.'
+      redirect_to thank_you_path, notice: 'Temperature check was successfully created.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /temperature_checks/1
-  def update
-    if @temperature_check.update(temperature_check_params)
-      redirect_to @temperature_check, notice: 'Temperature check was successfully updated.'
-    else
-      render :edit
-    end
-  end
+  # # PATCH/PUT /temperature_checks/1
+  # def update
+  #   if @temperature_check.update(temperature_check_params)
+  #     redirect_to @temperature_check, notice: 'Temperature check was successfully updated.'
+  #   else
+  #     render :edit
+  #   end
+  # end
 
-  # DELETE /temperature_checks/1
-  def destroy
-    @temperature_check.destroy
-    redirect_to temperature_checks_url, notice: 'Temperature check was successfully destroyed.'
-  end
+  # # DELETE /temperature_checks/1
+  # def destroy
+  #   @temperature_check.destroy
+  #   redirect_to temperature_checks_url, notice: 'Temperature check was successfully destroyed.'
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

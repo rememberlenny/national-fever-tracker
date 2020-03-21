@@ -1,3 +1,5 @@
+
+
 <%= form_with(model: temperature_check, class: "w-full") do |form| %>
   <%= render "shared/error_messages", resource: form.object %>
 
@@ -152,20 +154,18 @@
     <p class="mb-4">Share your location. This is intentionally inexact.</p>
 
     <div class="form-group flex flex-wrap items-center justify-start">
-      <label for="zip" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">Zipcode</label>
-      <input pattern="[0-9]*" name="zip" id="zip" class="form-control lg:flex-1">
+      <label for="zip" class="text-lg  normal-case">Zipcode</label>
+      <%= form.text_field :loc_zip, class: "form-control", pattern: "[0-9]*"  %>
     </div>
   
     <div class="form-group flex flex-wrap items-center justify-start">
-      <label for="city" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">City</label>
-      <input for="city" class="form-control lg:flex-1">
+      <label for="city" class="text-lg  normal-case">City</label>
+      <%= form.text_field :loc_city, class: "form-control" %>
     </div>
 
     <div class="form-group flex flex-wrap items-center justify-start">
-      <label for="state" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">State</label>
-      <div class="lg:flex-1 w-full">
-        <input type="text" name="state" id="state" class="form-control" value="">
-      </div>
+      <label for="state" class="text-lg  normal-case">State</label>
+      <%= form.text_field :loc_state, class: "form-control" %>
     </div>
   </div>
 

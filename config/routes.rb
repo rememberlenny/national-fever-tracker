@@ -1,6 +1,6 @@
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  resources :temperature_checks
+  resources :temperature_checks, only: [:new, :create]
 
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
@@ -88,6 +88,7 @@ Rails.application.routes.draw do
 
   scope controller: :static do
     get :about
+    get :thank_you
     get :faq
     get :terms
     get :privacy
