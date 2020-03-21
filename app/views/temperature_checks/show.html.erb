@@ -1,0 +1,35 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="h3"><%= link_to 'Temperature Checks', temperature_checks_path %> > Temperature Check #<%= @temperature_check.id %></h1>
+      <%= link_to 'Edit', edit_temperature_check_path(@temperature_check), class: "btn btn-link" %>
+    </div>
+
+    <div class="bg-white rounded shadow p-8">
+            <div class="mb-4">
+        <h5>Temperature</h5>
+        <%= @temperature_check.temperature %>
+      </div>
+            <div class="mb-4">
+        <h5>Symptoms</h5>
+        <%= @temperature_check.symptoms %>
+      </div>
+            <div class="mb-4">
+        <h5>Age</h5>
+        <%= @temperature_check.age %>
+      </div>
+            <div class="mb-4">
+        <h5>Loc city</h5>
+        <%= @temperature_check.loc_city %>
+      </div>
+            <div class="mb-4">
+        <h5>Loc zip</h5>
+        <%= @temperature_check.loc_zip %>
+      </div>
+            <div class="mb-4">
+        <h5>Loc state</h5>
+        <%= @temperature_check.loc_state %>
+      </div>
+          </div>
+  </div>
+</div>

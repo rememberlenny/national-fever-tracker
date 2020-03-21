@@ -86,3 +86,25 @@ form.inline {
     @apply w-1/4;
   }
 }
+
+
+.radio-button__input {
+  @apply hidden;
+
+  &:checked ~ .radio-button__label {
+    @apply text-gray-100;
+    @apply bg-blue-600;
+  }
+}
+
+.radio-button__label {
+  @apply block px-4 py-2;
+  @apply text-gray-700;
+  @apply bg-gray-200;
+  @apply cursor-pointer;
+  @apply rounded;
+
+  &:hover {
+    @apply bg-gray-400;
+  }
+}

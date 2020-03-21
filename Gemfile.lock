@@ -128,6 +128,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     chronic (0.10.2)
+    cocoon (1.2.14)
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
@@ -358,6 +359,7 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara (>= 2.15)
+  cocoon
   devise (>= 4.7.1)
   devise_invitable (~> 2.0, >= 2.0.1)
   devise_masquerade!

@@ -1,5 +1,6 @@
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  resources :temperature_checks
 
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
@@ -101,5 +102,5 @@ Rails.application.routes.draw do
   end
 
   # Public marketing homepage
-  root to: "static#index"
+  root to: "temperature_checks#new"
 end

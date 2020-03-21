@@ -29,6 +29,8 @@ import "src/forms"
 import "src/timezone"
 import "src/tooltips"
 
+import "cocoon";
+
 import LocalTime from "local-time"
 LocalTime.start()
 

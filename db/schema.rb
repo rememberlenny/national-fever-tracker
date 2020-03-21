@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_10_222159) do
+ActiveRecord::Schema.define(version: 2020_03_21_003353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,17 @@ ActiveRecord::Schema.define(version: 2020_01_10_222159) do
     t.string "card_exp_year"
     t.text "extra_billing_info"
     t.index ["owner_id"], name: "index_teams_on_owner_id"
+  end
+
+  create_table "temperature_checks", force: :cascade do |t|
+    t.string "temperature"
+    t.string "symptoms"
+    t.string "age"
+    t.string "loc_city"
+    t.string "loc_zip"
+    t.string "loc_state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_connected_accounts", force: :cascade do |t|

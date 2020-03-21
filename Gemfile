@@ -23,6 +23,8 @@ gem "redis", "~> 4.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
+gem "cocoon"
+
 # Security update
 gem "nokogiri", ">= 1.10.8"
 

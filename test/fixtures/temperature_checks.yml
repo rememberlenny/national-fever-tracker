@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temperature: MyString
+  symptoms: MyString
+  age: MyString
+  loc_city: MyString
+  loc_zip: MyString
+  loc_state: MyString
+
+two:
+  temperature: MyString
+  symptoms: MyString
+  age: MyString
+  loc_city: MyString
+  loc_zip: MyString
+  loc_state: MyString

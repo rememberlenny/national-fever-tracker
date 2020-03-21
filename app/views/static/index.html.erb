@@ -1,66 +1,183 @@
-<div class="py-32 max-w-2xl m-auto text-center flex flex-col items-center justify-center">
-  <h1 class="mb-2">Report your symptoms once a day and help track COVID-19</h1>
+<div class="py-8 max-w-2xl m-auto text-left flex flex-col items-center justify-center">
+  <h1 class="mb-4 text-4xl normal-case">Report your temperature</h1>
   <p class="mb-6 text-gray-700 leading-normal text-xl">Even if you are not sick or even if you do not think that you are at risk for Covid-19. <span class="font-bold">We need your help!</span></p>
-  <div class="flex flex-col items-center md:flex-row mb-8">
-    <div class="w-full md:w-auto">
-      <%= link_to "Start reporting your temperature", root_path, data: { turbolinks: false }, class: "text-xl btn btn-primary mr-0 lg:mb-0 mb-4" %>
-    </div>
-  </div>
-  <div class="flex flex-col items-center md:flex-row">
-    <div>
-      <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
-      <%= link_to "Learn more", '#mission', class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-      <%= link_to "Request the data", 'mailto:joy@nationalfevertracker.com', target: :_blank, data: { turbolinks: false }, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-    </div>
-  </div>
+  <div class="flex flex-col items-center md:flex-row mb-8 w-full">
+    <div class="w-full">
+      <form action="#" class="w-full">
+        <div class="border border-gray-400 rounded px-4 py-2 my-4">
+          <div class="mb-4">
+            <label for="temperature" class="text-lg normal-case">Temperature</label>
+            <p class="mb-4">Click the button below that corresponds to your current temperature</p>
+            <div class="flex w-full px-2">
+              <div class="radio-button w-full">
+                <input type="radio" class="radio-button__input" name="temperature" id="normal" value="normal" checked>
+                <label for="normal" class="w-full radio-button__label text-center">
+                  <p class="mb-0 font-bold mb-2 text-md">Under 98.6F (37 C)</p>
+                  <p class="mb-0 normal-case handwriting text-xl">Normal</p>
+                </label>
+              </div>
+            </div>
+            <div class="form-group flex flex-wrap items-center justify-start">
+              <div class="flex w-full">
+                <div class="radio-button w-2/3">
+                  <input type="radio" class="radio-button__input" name="temperature" id="fever" value="fever">
+                  <label for="fever" class="mx-2 radio-button__label text-center">
+                    <p class="mb-0 font-bold mb-2 text-md">Above 100.4 F (38.0 C)</p>
+                    <p class="mb-0 normal-case handwriting text-xl">Fever</p>
+                  </label>
+                </div>
+                <div class="radio-button w-1/3">
+                  <input type="radio" class="radio-button__input" name="temperature" id="dangerous" value="dangerous">
+                  <label for="dangerous" class="mx-2 radio-button__label text-center">
+                    <p class="mb-0 font-bold mb-2 text-md">Above 104 F (40 C)</p>
+                    <p class="mb-0 normal-case handwriting text-xl">Dangerous</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div> 
 
-</div>
-
-<div class="py-12 bg-white">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="mission" class="lg:text-left">
-      <p class="max-w-2xl mx-auto text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Mission</p>
-      <h3 class="max-w-2xl mx-auto mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        The tool we are missing in the fight against Covid-19 is a way to collect data. 
-      </h3>
-    </div>
-
-    <div class="mt-10">
-      <div class="flex mx-auto max-w-xl text-lg text-gray-900">
-        <div class="">
-          <p class="mt-4">
-            If you are willing to report your symptoms once a day for the duration of the Covid-19 epidemic, you can help people detect cases, understand the spread, and appropriately respond to this threat. This is vitally important. With better data we can save lives and we can save our economy. Everyone wants to get back to life, back to restaurants, back to seeing friends. Everyone also wants to stop millions of avoidable deaths. The way to win is through data.
-          </p>
-          <p class="mt-4">
-            Simply put, our mission is to collect self-reported symptoms from everyone in the country.
-          </p>
-          <p class="mt-4">
-            This tool was developed in March 2020 in response to a massive crisis that is resulting in deaths and job losses and loneliness. We are asking for help from every person. It’s your world. It’s your data. This data we collect goes directly to the research community and is available to all for free.
-          </p>
-          <p class="mt-4">
-            This data is not a substitute for widespread direct testing for the Covid-19 virus, but it's something to fill the gap. If enough people participate, this will be extremely valuable. Let’s get the world opened up again. Let’s take Covid-19 out!
-          </p>
-          <p class="mt-4">
-            Our application will ask you every day to report if you have a fever or not. We will ask for a few more signature symptoms of Covid-19, such as trouble breathing. The update only takes a few seconds to do.
-          </p>
-          <p class="mt-4">
-            All health information is private. We do not collect any personal identifiers so your responses can not be linked to you directly to you. The symptoms you report will be aggregated and reported by geographic region. Even we will not know who you are [see link to Privacy].
-          </p>
-          <p class="mt-4 italic text-gray-700">
-            P.S. This is not a business and has no intention of trying to make money. The volunteers working on this are academics and researchers.  <%= link_to 'Learn about the people behind this', about_path %> , or <%= link_to 'contact us to contribute', 'mailto:joy@nationalfevertracker.com' %>.
-          </p>
+        <div class="border border-gray-400 rounded px-4 py-2 my-4">
+          <label for="symptoms" class="text-lg label normal-case">Symptoms</label>
+          <p class="mb-4">Click any relevant symptoms.</p>
+          <div class="form-group flex flex-wrap items-center justify-start">
+            <div class="flex w-full">
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="cough" value="cough" >
+                <label for="cough" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Cough</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="throat" value="throat">
+                <label for="throat" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Sore throat</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="breathing" value="breathing">
+                <label for="breathing" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Shortness of breath</p>
+                </label>
+              </div>
+            </div> 
+            <div class="flex w-full">
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="nose" value="nose" >
+                <label for="nose" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Runny nose</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="aches" value="aches">
+                <label for="aches" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Body aches</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="headache" value="headache">
+                <label for="headache" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Headache</p>
+                </label>
+              </div>
+            </div> 
+            <div class="flex w-full">
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="sneezing" value="cough" >
+                <label for="sneezing" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Sneeze</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="fatigue" value="throat">
+                <label for="fatigue" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Fatigue</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="checkbox" class="radio-button__input" name="symptoms" id="diarrhoea" value="breathing">
+                <label for="diarrhoea" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">Diarrhoea</p>
+                </label>
+              </div>
+            </div> 
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="py-32 max-w-2xl m-auto text-center flex flex-col items-center justify-center">
-      <div class="flex flex-col items-center md:flex-row">
-        <div>
-          <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
-          <%= link_to "Frequently asked questions", faq_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-          <%= link_to "About", about_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
+        <div class="border border-gray-400 rounded px-4 py-2 my-4">
+          <label for="age" class="text-lg label lg:pr-4 lg:mt-2 normal-case">Age</label>
+          <div class="form-group flex flex-wrap items-center justify-start">
+            <div class="flex w-full">
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="18" value="18" >
+                <label for="18" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">18 - 29</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="30" value="30">
+                <label for="30" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">30 - 39</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="40" value="40">
+                <label for="40" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">40 - 49</p>
+                </label>
+              </div>
+            </div> 
+            <div class="flex w-full">
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="50" value="50" >
+                <label for="50" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">50 - 59</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="60" value="60">
+                <label for="60" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">60 - 69</p>
+                </label>
+              </div>
+              <div class="radio-button w-1/3">
+                <input type="radio" class="radio-button__input" name="age" id="70" value="70">
+                <label for="70" class="mx-2 radio-button__label text-center">
+                  <p class="mb-0 text-lg normal-case handwriting">70+</p>
+                </label>
+              </div>
+            </div> 
+  
+          </div>
         </div>
-      </div>
+        <div class="border border-gray-400 rounded px-4 py-2 my-4">
+          <label for="symptoms" class="text-lg label  normal-case">Location</label>
+          <p class="mb-4">Share your location. This is intentionally inexact.</p>
+
+          <div class="form-group flex flex-wrap items-center justify-start">
+            <label for="zip" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">Zipcode</label>
+            <input pattern="[0-9]*" name="zip" id="zip" class="form-control lg:flex-1">
+          </div>
+        
+          <div class="form-group flex flex-wrap items-center justify-start">
+            <label for="city" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">City</label>
+            <input for="city" class="form-control lg:flex-1">
+          </div>
+
+          <div class="form-group flex flex-wrap items-center justify-start">
+            <label for="state" class="text-lg lg:w-1/6 lg:text-right lg:pr-4 lg:mt-2 normal-case">State</label>
+            <div class="lg:flex-1 w-full">
+              <input type="text" name="state" id="state" class="form-control" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <input type="submit" value="Submit todays temperature" class="normal-case btn btn-primary w-full text-2xl text-center block h-12">
+        </div>
+        
+      </form>
     </div>
   </div>
+
 </div>
