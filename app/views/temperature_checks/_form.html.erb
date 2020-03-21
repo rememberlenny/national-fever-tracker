@@ -3,38 +3,49 @@
 <%= form_with(model: temperature_check, class: "w-full") do |form| %>
   <%= render "shared/error_messages", resource: form.object %>
 
-  <div class="border border-gray-400 rounded px-4 py-2 my-4">
+  <div class="border border-gray-400 rounded px-4 py-2 mt-4" data-controller="temperature">
     <div class="mb-4">
       <%= form.label :temperature, class: "text-lg normal-case" %>
-      <p class="mb-4">Click the button below that corresponds to your current temperature</p>
-      <div class="flex w-full px-2">
-        <div class="radio-button w-full">
-          <%= form.radio_button :temperature, 'normal', class: 'radio-button__input' %>
-          <%= form.label :temperature, :value => 'normal', class: "w-full radio-button__label text-center" do %>
-            <p class="mb-0 font-bold mb-2 text-md">Under 98.6F (37 C)</p>
-            <p class="mb-0 normal-case handwriting text-xl">Normal</p>
-          <% end %>
+      <p class="mb-4">Enter your last taken temperature or click the button below that corresponds to the closest range</p>
+      <div class="form-group flex flex-wrap items-center justify-start ">
+        <div class="w-full lg:w-2/5">
+          <%= form.label :temperature, value: 'Exact reading', class: "text-lg normal-case" %>
+          <%= form.number_field :temperature_value, step: 0.1, class: "text-2xl form-control mb-2", placeholder: 98, data: { target: 'temperature.temperatureValue',  action: "keydown->temperature#temperatureValueChanged" } %>
+          <p class="mb-4">Use the field for exact values in fahrenheit.</p>
         </div>
-      </div>
-      <div class="form-group flex flex-wrap items-center justify-start">
-        <div class="flex w-full">
-          <div class="radio-button w-2/3">
-            <%= form.radio_button :temperature, 'fever', class: 'radio-button__input' %>
+        <div class="form-group flex flex-wrap items-center justify-start w-full lg:w-1/5 mb-4lg:mb-0">
+          <span class="flex text-center items-center justify-center w-full font-bold">
+            or
+          </span>
+        </div>
+        <div class="form-group flex flex-wrap items-center justify-start w-full lg:w-2/5 mb-0" data-target="temperature.temperatureButtons">
+          <div class="flex w-full px-2">
+            <div class="radio-button w-full">
+              <%= form.radio_button :temperature, 'normal', class: 'radio-button__input', data: { target: 'temperature.temperatureNormal', action: "change->temperature#temperatureButtonChanged" } %>
+              <%= form.label :temperature, :value => 'normal', class: "w-full radio-button__label text-center" do %>
+                <p class="mb-0 font-bold mb-2 text-md">Under 98.6F (37 C)</p>
+                <p class="mb-0 normal-case handwriting text-xl">Normal</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="radio-button w-full">
+            <%= form.radio_button :temperature, 'fever', class: 'radio-button__input', data: { target: 'temperature.temperatureFever', action: "change->temperature#temperatureButtonChanged" } %>
             <%= form.label :temperature, :value => 'fever', class: "mx-2 radio-button__label text-center" do %>
               <p class="mb-0 font-bold mb-2 text-md">Above 100.4 F (38.0 C)</p>
               <p class="mb-0 normal-case handwriting text-xl">Fever</p>
             <% end %>
           </div>
-          <div class="radio-button w-1/3">
-            <%= form.radio_button :temperature, 'dangerous', class: 'radio-button__input' %>
+          <div class="radio-button w-full">
+            <%= form.radio_button :temperature, 'dangerous', class: 'radio-button__input', data: { target: 'temperature.temperatureHigh', action: "change->temperature#temperatureButtonChanged" } %>
             <%= form.label :temperature, :value => 'dangerous', class: "mx-2 radio-button__label text-center" do %>
               <p class="mb-0 font-bold mb-2 text-md">Above 104 F (40 C)</p>
-              <p class="mb-0 normal-case handwriting text-xl">Dangerous</p>
+              <p class="mb-0 normal-case handwriting text-xl">High fever</p>
             <% end %>
           </div>
         </div>
       </div>
     </div> 
+
   </div> 
 
   <!-- <div class="border border-gray-400 rounded px-4 py-2 my-4">
@@ -170,6 +181,6 @@
   </div>
 
   <div class="mt-8">
-    <input type="submit" value="Submit todays temperature" class="normal-case btn btn-primary w-full text-2xl text-center block h-12">
+    <input type="submit" value="Submit todays temperature" class="normal-case btn btn-secondary w-full text-2xl text-center block h-12">
   </div>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_21_003353) do
+ActiveRecord::Schema.define(version: 2020_03_21_162452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 2020_03_21_003353) do
     t.string "loc_state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "temperature_value"
   end
 
   create_table "user_connected_accounts", force: :cascade do |t|

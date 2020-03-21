@@ -53,6 +53,6 @@ class TemperatureChecksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def temperature_check_params
-      params.require(:temperature_check).permit(:temperature, :symptoms, :age, :loc_city, :loc_zip, :loc_state)
+      params.require(:temperature_check).permit(:temperature, :symptoms, :age, :loc_city, :loc_zip, :loc_state, :temperature_value)
     end
 end

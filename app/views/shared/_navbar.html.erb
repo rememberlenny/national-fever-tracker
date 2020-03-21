@@ -76,7 +76,8 @@
         </div>
 
       <% else %>
-        <%= link_to 'Record your temperature', root_path, class: 'btn btn-primary' %>
+      <%= link_to 'Record your temperature', root_path, class: 'nav-link' %>
+        <%= link_to 'Get daily email request', daily_request_path, class: 'btn btn-primary' %>
         <%#= link_to 'Log In', new_user_session_path, class: 'nav-link' %>
         <%#= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
       <% end %>

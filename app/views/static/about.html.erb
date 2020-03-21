@@ -10,7 +10,7 @@
     </div>
     <div class="flex flex-col items-center md:flex-row">
       <div>
-        <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
+        <span class="hidden md:inline h-10 mr-4"></span>
         <%= link_to "Learn more", '#mission', class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
         <%= link_to "About the team", '#team', class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
         <%= link_to "Request the data", 'mailto:joy@nationalfevertracker.com', target: :_blank, data: { turbolinks: false }, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
@@ -48,7 +48,7 @@
             Our application will ask you every day to report if you have a fever or not. We will ask for a few more signature symptoms of Covid-19, such as trouble breathing. The update only takes a few seconds to do.
           </p>
           <p class="mt-4">
-            All health information is private. We do not collect any personal identifiers so your responses can not be linked to you directly to you. The symptoms you report will be aggregated and reported by geographic region. Even we will not know who you are [see link to Privacy].
+            All health information is private. We do not collect any personal identifiers so your responses can not be linked to you directly to you. The symptoms you report will be aggregated and reported by geographic region. Even we will not know who you are.
           </p>
           <p class="mt-4 italic text-gray-700">
             P.S. This is not a business and has no intention of trying to make money. The volunteers working on this are academics and researchers.  <%= link_to 'Learn about the people behind this', about_path %> , or <%= link_to 'contact us to contribute', 'mailto:joy@nationalfevertracker.com' %>.
@@ -60,9 +60,8 @@
     <div class="py-32 max-w-2xl m-auto text-center flex flex-col items-center justify-center">
       <div class="flex flex-col items-center md:flex-row">
         <div>
-          <span class="hidden md:inline border border-gray-200 h-10 mr-4"></span>
+          <span class="hidden md:inline h-10 mr-4"></span>
           <%= link_to "Frequently asked questions", faq_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
-          <%= link_to "About", about_path, class: "btn btn-tertiary outline lg:mr-4 mr-0 lg:mb-0 mb-4" %>
         </div>
       </div>
     </div>
@@ -70,7 +69,7 @@
 </div>
 
 <div class="container mx-auto mt-8" id="team">
-  <h1>About</h1>
+  <h1 class="text-center">About</h1>
 
   <div class="py-12 my-12 ">
 
