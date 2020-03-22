@@ -24,7 +24,7 @@ class TrackerRemindersController < ApplicationController
     @tracker_reminder = TrackerReminder.new(tracker_reminder_params)
 
     if @tracker_reminder.save
-      redirect_to @tracker_reminder, notice: 'Tracker reminder was successfully created.'
+      redirect_to thank_you_path, notice: 'Your daily reminder is scheduled. Please check your email to confirm.'
     else
       render :new
     end
