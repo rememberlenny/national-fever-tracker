@@ -1,0 +1,19 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="h3"><%= link_to 'Tracker Reminders', tracker_reminders_path %> > Tracker Reminder #<%= @tracker_reminder.id %></h1>
+      <%= link_to 'Edit', edit_tracker_reminder_path(@tracker_reminder), class: "btn btn-link" %>
+    </div>
+
+    <div class="bg-white rounded shadow p-8">
+            <div class="mb-4">
+        <h5>Email</h5>
+        <%= @tracker_reminder.email %>
+      </div>
+            <div class="mb-4">
+        <h5>Time to send</h5>
+        <%= @tracker_reminder.time_to_send %>
+      </div>
+          </div>
+  </div>
+</div>

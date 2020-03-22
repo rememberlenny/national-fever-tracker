@@ -1,5 +1,6 @@
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  resources :tracker_reminders, only: [:new, :create, :show]
   resources :temperature_checks, only: [:new, :create]
 
   # Jumpstart views

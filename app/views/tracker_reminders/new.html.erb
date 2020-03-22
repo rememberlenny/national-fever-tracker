@@ -1,0 +1,63 @@
+<div class="container mx-auto my-8 px-4">
+  <div class="max-w-2xl mx-auto">
+    <div class="py-12  flex flex-col justify-between items-center mb-4">
+      <h1 class="mb-4 max-w-2xl m-auto text-center flex flex-col items-center justify-center">Receive a daily temperature check reminder</h1>
+      <p class="text-xl">
+        Even if you are not sick or even if you do not think that you are at risk for Covid-19. We need your help!
+      </p>
+    </div>
+
+    <div class="bg-white rounded shadow p-8">
+      <%= render 'form', tracker_reminder: @tracker_reminder %>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mx-auto mt-16">
+  <h1 class="text-center text-3xl">A few frequently asked questions</h1>
+
+  <div class="py-12">
+
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-left">
+        <div class="">
+          <div class="mx-auto max-w-3xl text-lg text-gray-900">
+            <div class="comments mb-4 bg-white">
+              <div class="comment">
+                <p class="comment__body">Will you send me spam emails?</p>
+
+                <div class="comment__author">
+                  <p class="comment__author-name">No. If you would be willing to sign up for our newsletter [here] we’d love to keep you updated on the project and how we can all stop Covid-19. If you submit your email to get access to the data, you automatically sign up for our newsletter.</p>
+                </div>
+              </div>
+            </div>
+            <div class="comments mb-4 bg-white">
+              <div class="comment">
+                <p class="comment__body">Can I turn off once-a-day notifications?</p>
+
+                <div class="comment__author">
+                  <p class="comment__author-name">First, we hope you will keep them on. People are dying and losing their jobs. This is a small way to help. After one week, you can turn the notifications off. Remember, even if you are not feeling sick, it is extremely important to check in. This does not work if only sick people check in.</p>
+                </div>
+                <div class="comment__author">
+                  <p class="comment__author-name">We know we wouldn’t remember to update without a notification, so that’s why we make that the default. Let’s get the data we need so that we can stop all the shut downs!</p>
+                </div>
+              </div>
+            </div>
+            <div class="comments mb-4 bg-white">
+              <div class="comment">
+                <p class="comment__body">Is someone making money from this?</p>
+
+                <div class="comment__author">
+                  <p class="comment__author-name">We covered starting costs with a grant from the <%= link_to '1517 fund', 'https://www.1517fund.com/' %>. We are volunteers creating a dataset to give away for free. Anyone who reports daily is also an important volunteer. We welcome additional help and funding from anyone who wants to overcome the Covid-19 crisis.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>

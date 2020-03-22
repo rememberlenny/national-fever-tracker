@@ -11,7 +11,7 @@
         <div class="w-full lg:w-2/5">
           <%= form.label :temperature, value: 'Exact reading', class: "text-lg normal-case" %>
           <%= form.number_field :temperature_value, step: 0.1, class: "text-2xl form-control mb-2", placeholder: 98, data: { target: 'temperature.temperatureValue',  action: "keydown->temperature#temperatureValueChanged" } %>
-          <p class="mb-4">Use the field for exact values in fahrenheit.</p>
+          <p class="mb-4">Value in fahrenheit.</p>
         </div>
         <div class="form-group flex flex-wrap items-center justify-start w-full lg:w-1/5 mb-4lg:mb-0">
           <span class="flex text-center items-center justify-center w-full font-bold">
