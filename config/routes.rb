@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :temperature_checks, only: [:new, :create]
 
   # Jumpstart views
-  # if Rails.env.development? || Rails.env.test?
-  #   mount Jumpstart::Engine, at: '/jumpstart'
-  #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  # end
+  if Rails.env.development? || Rails.env.test?
+    mount Jumpstart::Engine, at: '/jumpstart'
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
   # Administrate
   # authenticated :user, lambda { |u| u.admin? } do
