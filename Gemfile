@@ -36,6 +36,7 @@ group :development, :test do
   gem "brakeman"
   gem "bundler-audit"
   gem "letter_opener_web", "~> 1.3", ">= 1.3.4"
+  
 end
 
 group :development do

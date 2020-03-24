@@ -6,9 +6,12 @@ class DailyTemperatureCheckMailer < ApplicationMailer
   #   en.daily_temperature_check_mailer.first_email.subject
   #
   def first_email
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @daily_temperature_check = params[:daily_temperature_check]
+    mail(
+      to: "#{@daily_temperature_check.email}",
+      from: "Leonard from NFT <#{Jumpstart.config.support_email}>",
+      subject: 'Thanks for signing up to track your temperature!'
+    )
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
