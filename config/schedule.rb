@@ -13,9 +13,9 @@
 #   rake "some:great:rake:task"
 # end
 
-every 30.minutes, :roles => [:app] do
-  sidekiq "ScheduleEmailRequestWorker"
-end
+# every 30.minutes, :roles => [:app] do
+#   sidekiq "ScheduleEmailRequestWorker"
+# end
 #
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"

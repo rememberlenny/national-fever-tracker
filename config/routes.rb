@@ -1,6 +1,6 @@
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  resources :tracker_reminders, only: [:new, :create, :show]
+  resources :tracker_reminders, only: [:new, :create]
   resources :temperature_checks, only: [:new, :create]
 
   # Jumpstart views
@@ -88,7 +88,6 @@ Rails.application.routes.draw do
   # end
 
   scope controller: :static do
-    get :daily_request
     get :about
     get :thank_you
     get :faq

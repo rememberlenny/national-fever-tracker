@@ -5,9 +5,6 @@ class StaticController < ApplicationController
   def about
   end
 
-  def daily_request
-  end
-
   def faq
   end
 

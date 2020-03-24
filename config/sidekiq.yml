@@ -1,0 +1,4 @@
+---
+:queues:
+  - tracker_production_mailers
+  - tracker_production_default
