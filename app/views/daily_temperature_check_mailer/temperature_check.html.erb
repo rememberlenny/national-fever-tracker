@@ -1,5 +1,14 @@
-<h1>DailyTemperatureCheck#temperature_check</h1>
+<h1>Here is your daily reminder to check your temperature!</h1>
+
+<p>Thank you for signing up to share you daily temperature! If you are interested in learning about this project and the data collected, please view our <%= link_to 'about page', about_url %>.</p>
+
+<h2>Your temperature is:</h2>
 
 <p>
-  <%= @greeting %>, find me in app/views/daily_temperature_check_mailer/temperature_check.html.erb
+  You can easily report your temperature for today using the links below:
 </p>
+
+
+<%= link_to 'Normal (Under 98.6F)', new_temperature_check_url({temperature: 'normal'}), style: "background:#387bb2; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>
+
+<%= link_to 'Not normal (click to add details)', new_temperature_check_url({temperature: 'fever'}), style: "background:#b24738; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>

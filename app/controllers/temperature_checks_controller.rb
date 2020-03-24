@@ -13,6 +13,12 @@ class TemperatureChecksController < ApplicationController
   # GET /temperature_checks/new
   def new
     @temperature_check = TemperatureCheck.new
+    if params[:temperature] === 'normal'
+        @temperature_check.temperature = 'normal'
+    end
+  end
+
+  def record_temp
   end
 
   # # GET /temperature_checks/1/edit
