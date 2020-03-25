@@ -8,8 +8,10 @@ class TemperatureCheck < ApplicationRecord
   # validates :loc_state, presence: true
 
   def temperature_value_min
-    if !temperature_value.blank? && temperature_value < 90 || temperature_value > 110
-      errors.add(:temperature_value, "should be in fahrenheit")
+    if !temperature_value.nil?
+      if !temperature_value.blank? && temperature_value < 90 || temperature_value > 110
+        errors.add(:temperature_value, "should be in fahrenheit")
+      end
     end
   end
 
