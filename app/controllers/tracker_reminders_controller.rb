@@ -1,4 +1,6 @@
 class TrackerRemindersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   before_action :set_tracker_reminder, only: [:show, :edit, :update, :destroy]
 
   # GET /tracker_reminders
