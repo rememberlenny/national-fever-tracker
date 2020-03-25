@@ -1,5 +1,7 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: Jumpstart.config.support_email
   layout 'mailer'
-end
 
+  # Include any view helpers from your main app to use in mailers here
+  add_template_helper(ApplicationHelper)
+end
