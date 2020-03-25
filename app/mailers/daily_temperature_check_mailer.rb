@@ -9,7 +9,7 @@ class DailyTemperatureCheckMailer < ApplicationMailer
     @daily_temperature_check = params[:daily_temperature_check]
     mail(
       to: "#{@daily_temperature_check.email}",
-      from: "Leonard from NFT <#{Jumpstart.config.support_email}>",
+      from: "Joy and Leonard from National Fever Tracker <#{Jumpstart.config.support_email}>",
       subject: 'Thanks for signing up to track your temperature!',
       :track_opens => 'true'
     )
@@ -21,8 +21,12 @@ class DailyTemperatureCheckMailer < ApplicationMailer
   #   en.daily_temperature_check_mailer.temperature_check.subject
   #
   def temperature_check
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @daily_temperature_check = params[:daily_temperature_check]
+    mail(
+      to: "#{@daily_temperature_check.email}",
+      from: "Joy and Leonard from National Fever Tracker <#{Jumpstart.config.support_email}>",
+      subject: 'Reminder - Please check your temperature for National Fever Tracker',
+      :track_opens => 'true'
+    )
   end
 end
