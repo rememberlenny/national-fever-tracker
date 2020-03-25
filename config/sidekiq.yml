@@ -1,4 +1,4 @@
 ---
 :queues:
-  - tracker_production_mailers
+  - mailers
   - tracker_production_default
