@@ -9,12 +9,12 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
   # Administrate
   authenticated :user, lambda { |u| u.admin? } do
     namespace :admin do
       if defined?(Sidekiq)
-        require 'sidekiq/web'
-        mount Sidekiq::Web => '/sidekiq'
       end
 
       resources :announcements
