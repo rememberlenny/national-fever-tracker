@@ -8,6 +8,44 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :masquerade_user!
 
+  before_action :prepare_meta_tags, if: "request.get?"
+
+  def prepare_meta_tags(options={})
+    site_name   = "NationalFeverTracker.com"
+    title       = 'Lets track COVID-19 together'
+    description = "Even if you are not sick or even if you do not think that you are at risk for Covid-19. We need your help!"
+    image       = options[:image] || "https://national-fever-tracker.s3.amazonaws.com/og-graph.png"
+    current_url = request.url
+
+    # Let's prepare a nice set of defaults
+    defaults = {
+      site:        site_name,
+      title:       title,
+      image:       image,
+      description: description,
+      keywords:    %w[covid-19 coronoavirus temperature check daily checkyourtemp],
+      twitter: {
+        site_name: site_name,
+        site: '@natfevertracker',
+        card: 'Receive a daily reminder to check your temperature',
+        description: description,
+        image: image
+      },
+      og: {
+        url: current_url,
+        site_name: site_name,
+        title: title,
+        image: image,
+        description: description,
+        type: 'website'
+      }
+    }
+
+    options.reverse_merge!(defaults)
+
+    set_meta_tags options
+  end
+
   protected
 
     # To add extra fields to Devise registration, add the attribute names to `extra_keys`

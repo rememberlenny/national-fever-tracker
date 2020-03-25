@@ -23,8 +23,6 @@ gem "redis", "~> 4.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
-gem "sidekiq"
-
 # Security update
 gem "nokogiri", ">= 1.10.8"
 
@@ -62,6 +60,8 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'rails_real_favicon'
 end
+
+gem 'meta-tags'
 
 # Jumpstart dependencies
 gem "jumpstart", path: "lib/jumpstart"
