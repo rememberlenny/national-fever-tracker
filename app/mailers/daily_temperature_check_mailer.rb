@@ -10,7 +10,8 @@ class DailyTemperatureCheckMailer < ApplicationMailer
     mail(
       to: "#{@daily_temperature_check.email}",
       from: "Leonard from NFT <#{Jumpstart.config.support_email}>",
-      subject: 'Thanks for signing up to track your temperature!'
+      subject: 'Thanks for signing up to track your temperature!',
+      :track_opens => 'true'
     )
   end
 

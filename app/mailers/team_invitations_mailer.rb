@@ -16,7 +16,8 @@ class TeamInvitationsMailer < ApplicationMailer
     mail(
       to: "#{name} <#{email}>",
       from: "#{@invited_by.name} <#{Jumpstart.config.support_email}>",
-      subject: I18n.t("team_invitations_mailer.invite.subject", inviter: @invited_by.name, team: @team.name)
+      subject: I18n.t("team_invitations_mailer.invite.subject", inviter: @invited_by.name, team: @team.name),
+      :track_opens => 'true'
     )
   end
 end
