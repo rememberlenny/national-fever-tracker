@@ -10,7 +10,7 @@ class TrackerReminder < ApplicationRecord
 
   def self.check_to_send
     TrackerReminder.all.each do |reminder|
-      mail = DailyTemperatureCheckMailer.with(tracker_reminder: reminder).temperature_check
+      mail = DailyTemperatureCheckMailer.with(daily_temperature_check: reminder).temperature_check
       mail.deliver_later
     end
   end
