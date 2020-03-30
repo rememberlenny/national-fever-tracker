@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
+  mount Blazer::Engine, at: "blazer"
+  
   # Administrate
   authenticated :user, lambda { |u| u.admin? } do
     namespace :admin do
