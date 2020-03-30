@@ -12,82 +12,82 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   mount Blazer::Engine, at: "blazer"
-  
-  # Administrate
-  authenticated :user, lambda { |u| u.admin? } do
-    namespace :admin do
-      if defined?(Sidekiq)
-      end
 
-      resources :announcements
-      resources :users
-      namespace :user do
-        resources :connected_accounts
-      end
-      resources :teams
-      resources :team_members
-      resources :plans
-      namespace :pay do
-        resources :charges
-        resources :subscriptions
-      end
+  # # Administrate
+  # authenticated :user, lambda { |u| u.admin? } do
+  #   namespace :admin do
+  #     if defined?(Sidekiq)
+  #     end
 
-      root to: "dashboard#show"
-    end
-  end
+  #     resources :announcements
+  #     resources :users
+  #     namespace :user do
+  #       resources :connected_accounts
+  #     end
+  #     resources :teams
+  #     resources :team_members
+  #     resources :plans
+  #     namespace :pay do
+  #       resources :charges
+  #       resources :subscriptions
+  #     end
 
-  # API routes
-  namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      resource :me, controller: :me
-      resources :teams
-      resources :users
-    end
-  end
+  #     root to: "dashboard#show"
+  #   end
+  # end
 
-  # User account
-  devise_for :users,
-             controllers: {
-               masquerades: 'jumpstart/masquerades',
-               omniauth_callbacks: 'users/omniauth_callbacks',
-               registrations: 'users/registrations',
-             }
+  # # API routes
+  # namespace :api, defaults: { format: :json } do
+  #   namespace :v1 do
+  #     resource :me, controller: :me
+  #     resources :teams
+  #     resources :users
+  #   end
+  # end
 
-  resources :announcements, only: [:index]
-  resources :api_tokens
-  resources :teams do
-    member do
-      patch :switch
-    end
+  # # User account
+  # devise_for :users,
+  #            controllers: {
+  #              masquerades: 'jumpstart/masquerades',
+  #              omniauth_callbacks: 'users/omniauth_callbacks',
+  #              registrations: 'users/registrations',
+  #            }
 
-    resources :team_members, path: :members
-    resources :team_invitations, path: :invitations, module: :teams
-  end
-  resources :team_invitations
+  # resources :announcements, only: [:index]
+  # resources :api_tokens
+  # resources :teams do
+  #   member do
+  #     patch :switch
+  #   end
 
-  # Payments
-  resource :card
-  resource :subscription do
-    patch :info
-    patch :resume
-  end
-  resources :charges
-  namespace :account do
-    resource :password
-  end
+  #   resources :team_members, path: :members
+  #   resources :team_invitations, path: :invitations, module: :teams
+  # end
+  # resources :team_invitations
 
-  namespace :users do
-    resources :mentions, only: [:index]
-  end
-  namespace :user, module: :users do
-    resources :connected_accounts
-  end
+  # # Payments
+  # resource :card
+  # resource :subscription do
+  #   patch :info
+  #   patch :resume
+  # end
+  # resources :charges
+  # namespace :account do
+  #   resource :password
+  # end
 
-  resources :embeds, only: [:create], constraints: { id: /[^\/]+/ } do
-    collection do
-      get :patterns
-    end
-  end
+  # namespace :users do
+  #   resources :mentions, only: [:index]
+  # end
+  # namespace :user, module: :users do
+  #   resources :connected_accounts
+  # end
+
+  # resources :embeds, only: [:create], constraints: { id: /[^\/]+/ } do
+  #   collection do
+  #     get :patterns
+  #   end
+  # end
 
   scope controller: :static do
     get :about
