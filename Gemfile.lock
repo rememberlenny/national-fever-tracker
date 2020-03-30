@@ -418,7 +418,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   strong_migrations
   turbolinks (~> 5)
-  turbolinks_render (~> 0.9.12)
+  turbolinks_render
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers

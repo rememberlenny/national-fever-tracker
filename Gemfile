@@ -24,6 +24,7 @@ gem "redis", "~> 4.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
+
 # Security update
 gem "nokogiri", ">= 1.10.8"
 
@@ -84,7 +85,7 @@ gem "pay", '~> 2.0.0'
 gem "pg_search", "~> 2.3"
 gem "receipts", "~> 1.0.0"
 gem "ruby-oembed", "~> 0.12.0", require: "oembed"
-gem "turbolinks_render", "~> 0.9.12"
+gem "turbolinks_render"
 
 # We always want the latest versions of these gems, so no version numbers
 gem "omniauth", github: "omniauth/omniauth"
