@@ -1,4 +1,4 @@
-FROM ruby:2.6.3-alpine
+FROM ruby:2.7-alpine
 
 RUN apk add --update --virtual \
   runtime-deps \
@@ -19,6 +19,8 @@ RUN apk add --update --virtual \
   imagemagick \
   git \
   && rm -rf /var/cache/apk/*
+
+RUN gem install bundler:2.1.2
 
 WORKDIR /app
 COPY . /app/
