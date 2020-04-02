@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   # include Users::TimeZone
   include Pagy::Backend
   include CurrentHelper
+  protect_from_forgery with: :exception
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :masquerade_user!
   skip_before_action :verify_authenticity_token
   before_action :prepare_meta_tags
