@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   resources :tracker_reminders, only: [:new, :create]
   resources :temperature_checks, only: [:new, :create]
+  resources :covid_testing, only: [:new, :create]
 
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
@@ -99,6 +100,7 @@ Rails.application.routes.draw do
     get :terms
     get :privacy
     get :pricing
+    get :covidtesting
   end
 
   match "/404", via: :all, to: "errors#not_found"
