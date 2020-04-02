@@ -20,7 +20,8 @@ RUN apk add --update --virtual \
   git \
   && rm -rf /var/cache/apk/*
 
-RUN gem install bundler:2.1.2
+RUN gem install bundler:2.1.2 &&\
+    gem install tzinfo-data
 
 WORKDIR /app
 COPY . /app/
