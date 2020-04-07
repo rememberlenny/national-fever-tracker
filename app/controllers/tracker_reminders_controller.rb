@@ -55,6 +55,6 @@ class TrackerRemindersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def tracker_reminder_params
-      params.require(:tracker_reminder).permit(:email, :time_to_send)
+      params.require(:tracker_reminder).permit(:email, :time_to_send, :loc_zip, :age)
     end
 end
