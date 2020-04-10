@@ -1,5 +1,6 @@
 class TrackerReminder < ApplicationRecord
-  validates :email, presence: true, uniqueness: { message: "has already been invited" } 
+  validates :email, presence: true, uniqueness: { message: "has already been invited" }
+  validates :loc_zip, length: { minimum: 5 }
 
   after_create :send_first_email
 
