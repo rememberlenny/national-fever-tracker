@@ -15,8 +15,17 @@ class TemperatureChecksController < ApplicationController
   # GET /temperature_checks/new
   def new
     @temperature_check = TemperatureCheck.new
-    if params[:temperature] === 'normal'
-        @temperature_check.temperature = 'normal'
+
+    if ['normal','fever'].include?(params[:temperature])
+      @temperature_check.temperature = params[:temperature]
+    end
+
+    if ['age_18_to_29','age_30_to_39','age_40_to_49','age_50_to_59','age_60_to_69','age_70_plus'].include?(params[:age])
+      @temperature_check.age = params[:age]
+    end
+
+    if params[:loc_zip] =~ /^\d{5}$/
+      @temperature_check.loc_zip = params[:loc_zip]
     end
   end
 

@@ -6,6 +6,6 @@
   You can easily report your temperature for today using the links below:
 </p>
 
-<%= link_to 'Normal (Under 98.6F)', new_temperature_check_url({temperature: 'normal'}), style: "background:#387bb2; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>
+<%= link_to 'Normal (Under 98.6F)', new_temperature_check_url({temperature: 'normal', age: @daily_temperature_check.age, loc_zip: @daily_temperature_check.loc_zip}), style: "background:#387bb2; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>
 
-<%= link_to 'Not normal (click to add details)', new_temperature_check_url({temperature: 'fever'}), style: "background:#b24738; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>
+<%= link_to 'Not normal (click to add details)', new_temperature_check_url({temperature: 'fever', age: @daily_temperature_check.age, loc_zip: @daily_temperature_check.loc_zip}), style: "background:#b24738; color:#fff; border-radius: 4px; text-decoration: none; padding:.75rem 1rem; margin-bottom: 10px; width: 100%; display: block; font-size: 18px; text-align: center;" %>
