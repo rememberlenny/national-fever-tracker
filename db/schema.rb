@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_184709) do
+ActiveRecord::Schema.define(version: 2020_04_14_185251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,7 +214,6 @@ ActiveRecord::Schema.define(version: 2020_04_07_184709) do
 
   create_table "temperature_checks", force: :cascade do |t|
     t.string "temperature"
-    t.string "symptoms"
     t.string "age"
     t.string "loc_city"
     t.string "loc_zip"
@@ -222,6 +221,11 @@ ActiveRecord::Schema.define(version: 2020_04_07_184709) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "temperature_value"
+    t.string "symptoms"
+    t.boolean "cough", default: false, null: false
+    t.boolean "sore_throat", default: false, null: false
+    t.boolean "difficulty_breathing", default: false, null: false
+    t.boolean "fatigue", default: false, null: false
   end
 
   create_table "tracker_reminders", force: :cascade do |t|

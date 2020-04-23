@@ -44,76 +44,44 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
+  </div>
 
-  </div> 
-
-  <!-- <div class="border border-gray-400 rounded px-4 py-2 my-4">
+  <div class="border border-gray-400 rounded px-4 py-2 my-4">
     <label for="symptoms" class="text-lg label normal-case">Symptoms</label>
     <p class="mb-4">Click any relevant symptoms.</p>
     <div class="form-group flex flex-wrap items-center justify-start">
       <div class="flex w-full">
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'cough', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'cough', class: "mx-2 radio-button__label text-center" do %>
+        <div class="radio-button w-1/2">
+          <%= form.check_box :cough, class: 'radio-button__input' %>
+          <%= form.label :cough, class: "mx-2 radio-button__label text-center" do %>
             <p class="mb-0 text-lg normal-case handwriting">Cough</p>
           <% end %>
         </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'throat', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'throat', class: "mx-2 radio-button__label text-center" do %>
+        <div class="radio-button w-1/2">
+          <%= form.check_box :sore_throat, class: 'radio-button__input' %>
+          <%= form.label :sore_throat, class: "mx-2 radio-button__label text-center" do %>
             <p class="mb-0 text-lg normal-case handwriting">Sore throat</p>
           <% end %>
         </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'breathing', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'breathing', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Shortness of breath</p>
-          <% end %>
-        </div>
-      </div> 
+      </div>
       <div class="flex w-full">
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'nose', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'nose', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Runny nose</p>
+        <div class="radio-button w-1/2">
+          <%= form.check_box :difficulty_breathing, class: 'radio-button__input' %>
+          <%= form.label :difficulty_breathing, class: "mx-2 radio-button__label text-center" do %>
+            <p class="mb-0 text-lg normal-case handwriting">Difficulty Breathing</p>
           <% end %>
         </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'aches', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'aches', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Body aches</p>
+        <div class="radio-button w-1/2">
+          <%= form.check_box :fatigue, class: 'radio-button__input' %>
+          <%= form.label :fatigue, class: "mx-2 radio-button__label text-center" do %>
+          <p class="mb-0 text-lg normal-case handwriting">Fatigue</p>
           <% end %>
         </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'headache', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'headache', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Headache</p>
-          <% end %>
-        </div>
-      </div> 
-      <div class="flex w-full">
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'sneezing', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'sneezing', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Sneeze</p>
-          <% end %>
-        </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'fatigue', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'fatigue', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Fatigue</p>
-          <% end %>
-        </div>
-        <div class="radio-button w-1/3">
-          <%= form.check_box ':symptoms', {}, 'diarrhoea', class: 'radio-button__input' %>
-          <%= form.label :symptoms, 'diarrhoea', class: "mx-2 radio-button__label text-center" do %>
-            <p class="mb-0 text-lg normal-case handwriting">Diarrhoea</p>
-          <% end %>
-        </div>
-      </div> 
+      </div>
     </div>
-  </div> -->
+  </div>
+
   <div class="border border-gray-400 rounded px-4 py-2 my-4">
     <label for="age" class="text-lg label lg:pr-4 lg:mt-2 normal-case">Age</label>
     <div class="form-group flex flex-wrap items-center justify-start">
@@ -136,7 +104,7 @@
             <p class="mb-0 text-lg normal-case handwriting">40 - 49</p>
           <% end %>
         </div>
-      </div> 
+      </div>
       <div class="flex w-full">
         <div class="radio-button w-1/3">
           <%= form.radio_button :age, 'age_50_to_59', class: 'radio-button__input' %>
@@ -156,7 +124,7 @@
             <p class="mb-0 text-lg normal-case handwriting">70+</p>
           <% end %>
         </div>
-      </div> 
+      </div>
 
     </div>
   </div>
@@ -168,7 +136,7 @@
       <label for="zip" class="text-lg  normal-case">Zipcode</label>
       <%= form.text_field :loc_zip, class: "form-control", pattern: "[0-9]*"  %>
     </div>
-<!--   
+<!--
     <div class="form-group flex flex-wrap items-center justify-start">
       <label for="city" class="text-lg  normal-case">City</label>
       <%= form.text_field :loc_city, class: "form-control" %>
