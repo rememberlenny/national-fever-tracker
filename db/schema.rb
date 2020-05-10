@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_184709) do
+ActiveRecord::Schema.define(version: 2020_05_10_062749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -222,6 +222,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_184709) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "temperature_value"
+    t.boolean "is_unsubscribed", default: false
   end
 
   create_table "tracker_reminders", force: :cascade do |t|
