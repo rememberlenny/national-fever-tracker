@@ -5,9 +5,13 @@
 
   <h2>If you have any issues, pleae email me directly at rememberlenny@gmail.com or contact me at (949)322-8496</h2>
 <% else %>
-  <h3>Enter your email below to be unsubscribed</h3>
-  <form method="post">
-    <input name="email" style="font-size: 16px; border: 1px solid gray;" id="email" type="text">
-    <input type="submit" class="btn btn-primary">
-  </form>
+  <div style="text-align: center">
+    <h3>Enter your email below to be unsubscribed</h3>
+      <%= form_with url: unsubscribe_path, method: 'post', local: true do %>
+        <div style="background: black; display: inline-block; padding: 1px;">
+          <%= text_field_tag(:email) %>      
+        </div>
+        <%= submit_tag("Submit") %>
+      <% end %>
+  </div>
 <% end %>
