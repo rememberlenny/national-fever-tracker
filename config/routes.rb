@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :tracker_reminders, only: [:new, :create]
   resources :temperature_checks, only: [:new, :create]
 
-  match "/unsubscrube/:email", via: :all, to: "temperature_checks#unsubscribe"
+  match "/unsubscribe/:email", via: :all, to: "temperature_checks#unsubscribe"
 
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
