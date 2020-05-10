@@ -11,10 +11,9 @@ class TrackerReminder < ApplicationRecord
 
   def self.check_to_send
     TrackerReminder.all.each do |reminder|
-      if !reminder.is_unsubscribed
-        mail = DailyTemperatureCheckMailer.with(daily_temperature_check: reminder).temperature_check
-        mail.deliver_later
-      end
+      next if reminder.is_unsubscribed
+      mail = DailyTemperatureCheckMailer.with(daily_temperature_check: reminder).temperature_check
+      mail.deliver_later
     end
   end
 end
