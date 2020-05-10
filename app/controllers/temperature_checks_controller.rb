@@ -14,7 +14,9 @@ class TemperatureChecksController < ApplicationController
 
 
   def unsubscribe
-    @email = params[:email]
+    @tracker = TrackerReminder.find(params[:id])
+    @tracker.un
+    @email = @tracker.email
   end
 
   # GET /temperature_checks/new
