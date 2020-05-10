@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :tracker_reminders, only: [:new, :create]
   resources :temperature_checks, only: [:new, :create]
 
-  match "/unsubscribe/:id", via: :all, to: "temperature_checks#unsubscribe"
-
+  match "/unsubscribe", via: :all, to: "temperature_checks#unsubscribe", as: :unsubscribe
+  
   # Jumpstart views
   if Rails.env.development? || Rails.env.test?
     mount Jumpstart::Engine, at: '/jumpstart'
