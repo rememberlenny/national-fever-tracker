@@ -12,6 +12,11 @@ class TemperatureChecksController < ApplicationController
   # def show
   # end
 
+
+  def unsubscribe
+    @email = params[:email]
+  end
+
   # GET /temperature_checks/new
   def new
     @temperature_check = TemperatureCheck.new
